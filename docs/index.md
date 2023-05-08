@@ -12,7 +12,7 @@ hero:
       link: /guide/getting-started
     - theme: alt
       text: Examples
-      link: /api-examples
+      link: /examples/
 
 features:
   - title: Fast and Stable

@@ -1,85 +1,83 @@
-# Markdown Extension Examples
+# Getting Started
 
 This page demonstrates some of the built-in markdown extensions provided by VitePress.
 
-## Syntax Highlighting
+## Installation
 
-VitePress provides Syntax Highlighting powered by [Shiki](https://github.com/shikijs/shiki), with additional features like line-highlighting:
+### Prerequisites
 
-**Input**
+- [Go](https://go.dev/) version 1.19 or higher.
 
-````
-```js{4}
-export default {
-  data () {
-    return {
-      msg: 'Highlighted!'
-    }
-  }
-}
-```
-````
+you can install it with:
 
-**Output**
+::: code-group
 
-```js{4}
-export default {
-  data () {
-    return {
-      msg: 'Highlighted!'
-    }
-  }
-}
+```sh [Binary]
+$ https://github.com/zan8in/afrog/releases
 ```
 
-## Custom Containers
-
-**Input**
-
-```md
-::: info
-This is an info box.
-:::
-
-::: tip
-This is a tip.
-:::
-
-::: warning
-This is a warning.
-:::
-
-::: danger
-This is a dangerous warning.
-:::
-
-::: details
-This is a details block.
-:::
+```sh [Github]
+$ git clone https://github.com/zan8in/afrog.git
+$ cd afrog
+$ go run cmd/afrog/main.go
+$ ./afrog -h
 ```
 
-**Output**
+```sh [Go]
+$ go install -v https://github.com/zan8in/afrog/cmd/afrog@latest
+```
 
-::: info
-This is an info box.
 :::
 
-::: tip
-This is a tip.
+## Running afrog
+
+By default, afrog scans all built-in PoCs, and if it finds any vulnerabilities, it automatically creates an HTML report with the date of the scan as the filename.
+
+```sh
+afrog -t https://example.com
+```
+
+::: details Warning occurs when running afrog
+If you see an error message saying:
+```
+[ERR] ceye reverse service not set: /home/afrog/.config/afrog/afrog-config.yaml
+```
+it means you need to modify the [configuration file](getting-started.md#configuration-file).
 :::
 
-::: warning
-This is a warning.
-:::
+Use the command `-s keyword` to perform a fuzzy search on all PoCs and scan the search results. Multiple keywords can be used, separated by commas. For example: `-s weblogic,jboss`.
 
-::: danger
-This is a dangerous warning.
-:::
+```sh
+afrog -t https://example.com -s weblogic,jboss
+```
 
-::: details
-This is a details block.
-:::
+Use the command `-S keyword` to scan vulnerabilities based on their severity level. Severity levels include: `info`, `low`, `medium`, `high`, and `critical`. For example, to only scan high and critical vulnerabilities, use the command `-S high,critical`.
 
-## More
+```sh
+afrog -t https://example.com -S high,critical
+```
 
-Check out the documentation for the [full list of markdown extensions](https://vitepress.dev/guide/markdown).
+You can scan multiple URLs at the same time as well.
+
+```sh
+afrog -T urls.txt
+```
+
+## Configuration file
+
+The first time you start afrog, it will automatically create a configuration file called `afrog-config.yaml`, which will be saved in the current user directory under `$HOME/.config/afrog/afrog-config.yaml`.
+
+Here is an example config file:
+
+```yaml
+reverse:
+  ceye:
+    api-key: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+    domain: "xxxxxx.ceye.io"
+```
+
+`reverse` is a reverse connection platform used to verify command execution vulnerabilities that cannot be echoed back. Currently, only ceye can be used for verification. To obtain ceye, follow these steps:
+
+- Go to the ceye.io website and register an account.
+- Log in and go to the personal settings page.
+- Copy the `domain` and `api-key` and correctly configure them in the `afrog-config.yaml` file.

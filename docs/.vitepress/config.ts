@@ -6,24 +6,63 @@ export default defineConfig({
   description: "A vast collection of security tools for bug bounty, pentest and red teaming",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
-    nav: [
-      { text: 'Guide', link: '/guide/what-is-afrog' },
-      { text: 'Examples', link: '/markdown-examples' },
-      { text: 'FAQ', link: '/api-examples' }
-    ],
+    nav: nav(),
 
-    sidebar: [
-      {
-        text: 'Introduction',
-        items: [
-          { text: 'What is afrog?', link: '/guide/what-is-afrog' },
-          { text: 'Getting Started', link: '/guide/getting-started' }
-        ]
-      }
-    ],
+    sidebar: {
+      '/guide/': sidebarGuide(),
+      '/examples/': sidebarExamples(),
+      '/faq/': sidebarFaq()
+    },
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/zan8in/afrog' }
     ]
   }
 })
+
+function sidebarGuide() {
+  return [
+    {
+      text: 'Introduction',
+      collapsed: false,
+      items: [
+        { text: 'What is afrog?', link: '/guide/what-is-afrog' },
+        { text: 'Getting Started', link: '/guide/getting-started' }
+      ]
+    }
+  ]
+}
+
+function sidebarExamples() {
+  return [
+    {
+      text: 'Introduction',
+      collapsed: false,
+      items: [
+        { text: 'What is afrog?', link: '/guide/what-is-afrog' },
+        { text: 'Getting Started', link: '/guide/getting-started' }
+      ]
+    }
+  ]
+}
+
+function sidebarFaq() {
+  return [
+    {
+      text: 'Introduction',
+      collapsed: false,
+      items: [
+        { text: 'What is afrog?', link: '/guide/what-is-afrog' },
+        { text: 'Getting Started', link: '/guide/getting-started' }
+      ]
+    }
+  ]
+}
+
+function nav() {
+  return [
+      { text: 'Guide', link: '/guide/what-is-afrog',activeMatch: '/guide/' },
+      { text: 'Examples', link: '/examples/',activeMatch: '/examples/' },
+      { text: 'FAQ', link: '/faq/',activeMatch: '/faq/' }
+  ]
+}
