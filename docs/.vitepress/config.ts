@@ -29,6 +29,24 @@ function sidebarGuide() {
         { text: 'What is afrog?', link: '/guide/what-is-afrog' },
         { text: 'Getting Started', link: '/guide/getting-started' }
       ]
+    },
+    {
+      text: 'Configuration',
+      collapsed: false,
+      items: [
+        { text: 'Reverse', link: '/guide/reverse' }
+      ]
+    },
+    {
+      text: 'Usage',
+      collapsed: false,
+      items: [
+        { text: 'Filters', link: '/guide/filters' },
+        { text: 'Rate Limits', link: '/guide/rate-limits' },
+        { text: 'Optimization', link: '/guide/optimzations' },
+        { text: 'Update', link: '/guide/update' },
+        { text: 'Proxy', link: '/guide/proxy' },
+      ]
     }
   ]
 }

@@ -1,6 +1,6 @@
 # Getting Started
 
-This page demonstrates some of the built-in markdown extensions provided by VitePress.
+A Security Tool for Bug Bounty, Pentest and Red Teaming.
 
 ## Installation
 
@@ -42,19 +42,13 @@ If you see an error message saying:
 ```
 [ERR] ceye reverse service not set: /home/afrog/.config/afrog/afrog-config.yaml
 ```
-it means you need to modify the [configuration file](getting-started.md#configuration-file).
+it means you need to modify the [configuration file](reverse.md#configuration).
 :::
 
-Use the command `-s keyword` to perform a fuzzy search on all PoCs and scan the search results. Multiple keywords can be used, separated by commas. For example: `-s weblogic,jboss`.
+To execute a custom PoC directory, you can use the following command:
 
 ```sh
-afrog -t https://example.com -s weblogic,jboss
-```
-
-Use the command `-S keyword` to scan vulnerabilities based on their severity level. Severity levels include: `info`, `low`, `medium`, `high`, and `critical`. For example, to only scan high and critical vulnerabilities, use the command `-S high,critical`.
-
-```sh
-afrog -t https://example.com -S high,critical
+afrog -t https://example.com -P mypocs/
 ```
 
 You can scan multiple URLs at the same time as well.
@@ -63,21 +57,4 @@ You can scan multiple URLs at the same time as well.
 afrog -T urls.txt
 ```
 
-## Configuration file
-
-The first time you start afrog, it will automatically create a configuration file called `afrog-config.yaml`, which will be saved in the current user directory under `$HOME/.config/afrog/afrog-config.yaml`.
-
-Here is an example config file:
-
-```yaml
-reverse:
-  ceye:
-    api-key: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-    domain: "xxxxxx.ceye.io"
-```
-
-`reverse` is a reverse connection platform used to verify command execution vulnerabilities that cannot be echoed back. Currently, only ceye can be used for verification. To obtain ceye, follow these steps:
-
-- Go to the ceye.io website and register an account.
-- Log in and go to the personal settings page.
-- Copy the `domain` and `api-key` and correctly configure them in the `afrog-config.yaml` file.
+For more information on how to use the tool, please refer to the usage documentation ([Usage](filters.md#filters)).
