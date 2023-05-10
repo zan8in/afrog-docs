@@ -4,4 +4,4 @@ afrog is a high-performance vulnerability scanner that is fast and stable. It su
 
 ## Screenshot
 
-![images](../.vitepress/public/images/1.png)
+![images](../../../images/1.png)

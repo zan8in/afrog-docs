@@ -6,6 +6,9 @@ export default defineConfig({
   description: "A vast collection of security tools for bug bounty, pentest and red teaming",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
+
+    logo: "images/afrog-logo.png",
+
     nav: nav(),
 
     sidebar: {
