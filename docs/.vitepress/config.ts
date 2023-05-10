@@ -16,16 +16,9 @@ export default defineConfig({
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/zan8in/afrog' }
-    ],
+    ]
 
-    search: {
-      provider: 'algolia',
-      options: {
-        appId: '8J64VVRP8K',
-        apiKey: 'a18e2f4cc5665f6602c5631fd868adfd',
-        indexName: 'afrog'
-      }
-    }
+   
   }
 })
 
@@ -76,12 +69,15 @@ function sidebarExamples() {
 function sidebarFaq() {
   return [
     {
-      text: 'Introduction',
+      text: 'FAQ',
       collapsed: false,
-      // items: [
-      //   { text: 'What is afrog?', link: '/guide/what-is-afrog' },
-      //   { text: 'Getting Started', link: '/guide/getting-started' }
-      // ]
+      items: [
+        { text: 'How to configure api-key?', link: '/faq/which-api-key-to-config' },
+        { text: 'How to configure proxy?', link: '/faq/how-to-configure-proxy' },
+        { text: 'I can not run it', link: '/faq/i-can-not-run-it' },
+        { text: 'afrog PoC format', link: '/faq/afrog-poc-format'},
+        { text: 'afrog Update failed?', link: '/faq/afrog-update-failed' }
+      ]
     }
   ]
 }
@@ -90,6 +86,6 @@ function nav() {
   return [
       { text: 'Guide', link: '/guide/what-is-afrog',activeMatch: '/guide/' },
       { text: 'Examples', link: '/examples/',activeMatch: '/examples/' },
-      { text: 'FAQ', link: '/faq/',activeMatch: '/faq/' }
+      { text: 'FAQ', link: '/faq/which-api-key-to-config',activeMatch: '/faq/' }
   ]
 }
