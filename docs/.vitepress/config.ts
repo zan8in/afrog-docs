@@ -3,11 +3,17 @@ import { defineConfig } from 'vitepress'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "afrog",
+  titleTemplate: ':title - A vast collection of security tools for bug bounty, pentest and red teaming',
   description: "A vast collection of security tools for bug bounty, pentest and red teaming",
+
+  head: [
+    ['link', { rel: 'shortcut icon', href: '/afrog-favicon.png' }]
+  ],
+
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
 
-    logo: "images/afrog-logo.png",
+    logo: "/afrog-logo.svg",
 
     nav: nav(),
 
