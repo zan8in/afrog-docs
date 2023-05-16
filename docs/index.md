@@ -11,8 +11,8 @@ hero:
       text: Getting Started
       link: /guide/getting-started
     - theme: alt
-      text: Examples
-      link: /examples/
+      text: Download
+      link: https://github.com/zan8in/afrog/releases
 
 features:
   - title: Fast and Stable

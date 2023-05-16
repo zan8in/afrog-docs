@@ -23,6 +23,11 @@ export default defineConfig({
       '/faq/': sidebarFaq()
     },
 
+    footer: {
+      // message: 'Released under the MIT License.',
+      copyright: '京ICP备11018762号'
+    },
+
     socialLinks: [
       { icon: 'github', link: 'https://github.com/zan8in/afrog' }
     ]
@@ -52,6 +57,9 @@ function sidebarGuide() {
       text: 'Usage',
       collapsed: false,
       items: [
+        { text: 'Targets', link: '/guide/targets' },
+        { text: 'PoCs', link: '/guide/pocs' },
+        { text: 'Output', link: '/guide/output' },
         { text: 'Filters', link: '/guide/filters' },
         { text: 'Rate Limits', link: '/guide/rate-limits' },
         { text: 'Optimization', link: '/guide/optimzations' },
