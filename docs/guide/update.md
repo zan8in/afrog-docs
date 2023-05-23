@@ -14,6 +14,10 @@ afrog -un
 
 ## Update PoC library
 
+::: warning
+**Deprecated since version 2.5.1.**
+:::
+
 Update afrog-pocs to latest released version. Automatic update by default.
 
 ```sh

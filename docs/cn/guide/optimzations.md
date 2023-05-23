@@ -4,7 +4,7 @@
 
 从版本2.3.0起，afrog引入了`monitor-target`功能，旨在监视无法访问的URL。一旦达到设定的[阈值](#max-host-errors)，该URL将被加入黑名单，以确保未来不再进行PoCs检测。通过使用这个功能，afrog扫描速度得到了显著提高，并解决了长时间卡进度或假性卡死问题。
 
-默认情况下，`monitor-target`功能是开启的。如果需要禁用该功能，请使用命令`disable-monitor-target`。
+默认情况下，`monitor-target`功能是禁用的。如果需要启用该功能，请使用命令`-monitor-target` 或 `-mt`。
 
 ```sh
 afrog -t https://example.com -dmt

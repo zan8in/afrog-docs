@@ -75,10 +75,30 @@ function sidebarExamples() {
     {
       text: 'Introduction',
       collapsed: false,
-      // items: [
-      //   { text: 'What is afrog?', link: '/guide/what-is-afrog' },
-      //   { text: 'Getting Started', link: '/guide/getting-started' }
-      // ]
+      items: [
+        { text: 'How to write poc?', link: '/examples/how-to-write-poc' }
+      ]
+    },
+    {
+      text: 'http',
+      collapsed: false,
+      items: [
+        { text: 'Html PoC structure', link: '/examples/http-poc-structure' }
+      ]
+    },
+    {
+      text: 'tcp/udp',
+      collapsed: false,
+      items: [
+        { text: 'Tcp PoC structure', link: '/examples/tcp-poc-structure' }
+      ]
+    },
+    {
+      text: 'go',
+      collapsed: false,
+      items: [
+        { text: 'Go PoC structure', link: '/examples/go-poc-structure' }
+      ]
     }
   ]
 }

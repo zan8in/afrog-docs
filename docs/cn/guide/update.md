@@ -14,6 +14,10 @@ afrog -update
 
 ## Update PoC library
 
+::: warning
+**2.5.1之后弃用**
+:::
+
 将 `afrog-pocs` 更新到最新发布的版本。默认为自动更新。
 
 ## Disable Update Check
