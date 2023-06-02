@@ -25,13 +25,9 @@ export default defineConfig({
 
     footer: {
         
-        // message: '<a href="https://beian.miit.gov.cn/" target="_blank">冀ICP备2023018570号</a>',
+        message: '',
 
-        copyright: `		 	<div style="width:400px;margin:0 auto; padding:5px 0 0 0;">
-      <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=13100302001129" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="/gabeian.png" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">冀公网安备 13100302001129号</p></a>
-      <a href="https://beian.miit.gov.cn/" target="_blank"><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">冀ICP备2023018570号</p></a>
-      </div>
-  `
+        copyright: `<a href="https://beian.miit.gov.cn/" target="_blank">冀ICP备2023018570号</a>\t\t<a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=13100302001129" >冀公网安备13100302001129号</a>`
     },
 
     socialLinks: [
