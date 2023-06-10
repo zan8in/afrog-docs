@@ -85,7 +85,8 @@ function sidebarExamples() {
       text: 'http',
       collapsed: false,
       items: [
-        { text: 'Html PoC structure', link: '/examples/http-poc-structure' }
+        { text: 'Html PoC structure', link: '/examples/http-poc-structure' },
+        { text: 'JNDI Demo', link: '/examples/jndi-demo' }
       ]
     },
     {
